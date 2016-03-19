@@ -13,46 +13,35 @@
         public spells = [];
         public weapons = [];
 
+        static $inject = ['$http', 'DiceService'];
 
-        public roll(num) {
-            return Math.floor((Math.random() * num) + 1);
+        constructor(private $http: ng.IHttpService, private DiceService: ZeroBitGaming.Services.DiceService) {
+            
         }
+       
+         // Creates a character from all of the saved stats 
+        public createCharacter() {
+            var player = this.newCharacter(this.strength, this.constitution, this.dexterity, this.agility, this.insight, this.willpower, this.perception, this.hp, this.items, this.talents, this.spells, this.weapons);
+            
+            return player;
 
-        public generateWeak() {
-            var weak = this.roll(6) + this.roll(6) + this.roll(6);
-            var weaky = ((weak - 10) / 2) - 2;
-            return weaky;
         }
+        // Saves a Character to the database
+        public saveCharacter() {
+            this.$http.post('/api/quiz', this.createCharacter())
+                .then((response) => {
+                   
+                });
+            }
+        
+       
 
-        public generateAverage() {
-            var average = this.roll(6) + this.roll(6) + this.roll(6);
-            var averagey = (average - 10) / 2;
-            return averagey;
-        }
-
-        public generateStrong() {
-            var strong = this.roll(6) + this.roll(6) + this.roll(6);
-            var strongy = ((strong - 10) / 2) + 2;
-        }
-
-        public generateEpic() {
-            var epic = this.roll(6) + this.roll(6) + this.roll(6);
-            var epicy = (epic / 2) + 2;
-        }
-
-        public generateSpecial() {
-            var s = this.roll(100);
-            var special;
-            var specialy;
-            if (s <= 1) {
-                special = this.roll(6) + this.roll(6) + this.roll(6) + this.roll(6) + this.roll(6);
-                specialy = (special - 10) / 2;
-                return specialy;
-            } else if (s <= 20) {
-                special = this.roll(6) + this.roll(6) + this.roll(6);
-                specialy = 
+        public questionOne(answer) {
+            switch (answer) {
+                
             }
         }
+
 
         public newCharacter(strength, constitution, dexterity, agility, insight, willpower, perception, hP, items, talents, spells, weapons) {
             this.strength = strength,
