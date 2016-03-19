@@ -299,6 +299,7 @@
     <TypeScriptCompile Include="Presentation\ngApp\controllers\quizController.ts" />
     <TypeScriptCompile Include="Presentation\ngApp\services\diceService.ts" />
     <TypeScriptCompile Include="Presentation\ngApp\services\itemService.ts" />
+    <TypeScriptCompile Include="Presentation\ngApp\services\WordService.ts" />
     <TypeScriptCompile Include="Scripts\typings\angularjs\angular-animate.d.ts" />
     <TypeScriptCompile Include="Scripts\typings\angularjs\angular-component-router.d.ts" />
     <TypeScriptCompile Include="Scripts\typings\angularjs\angular-cookies.d.ts" />

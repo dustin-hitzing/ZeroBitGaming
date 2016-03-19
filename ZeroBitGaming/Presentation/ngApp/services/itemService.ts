@@ -1,43 +1,161 @@
 ﻿namespace ZeroBitGaming.Services {
     export class ItemService {
 
-        static $inject = ['DiceSerivce']
+        static $inject = ['DiceSerivce', 'WordService']
 
-        constructor(private DiceService: ZeroBitGaming.Services.DiceService) { }
+        constructor(private DiceService: ZeroBitGaming.Services.DiceService, private WordService: ZeroBitGaming.Services.WordService) { }
+
 
         public regularItems() {
+            var roll = this.DiceService.roll;
+            var material = this.WordService.randomMaterial;
+            var color = this.WordService.randomColor;
+            var mod = this.WordService.randomWeaponModifiers;
+            var lang = this.WordService.randomLanguage;
+            var race = this.WordService.randomRace;
             switch (this.DiceService.roll(100)) {
                 case 1: return `${this.DiceService.roll(500)}ft of Rope`;
                 case 2: return `${this.DiceService.roll(3)} minor healing potion(s)`;
                 case 3: return `${this.DiceService.roll(3)} major healing potion(s)`;
                 case 4: return `${this.DiceService.roll(1000)} marbles`;
                 case 5: return `Leather Coin Purse`;
-                case 6: return `${this.DiceService.roll(3)} vile(s) of poison`;
+                case 6: return `${this.DiceService.roll(3)} vial(s) of poison`;
                 case 7: return `${this.DiceService.roll(10)} cask(s) of wine`;
                 case 8: return `${this.DiceService.roll(10)} match(es)`;
-                case 9: return `A 10ft pole`;
+                case 9: return `A 10ft ${material()} pole`;
                 case 10: return `${this.DiceService.roll(5)} loaves of bread`;
                 case 11: return `A pair of Iron Shackles`;
                 case 12: return `A medical kit`;
                 case 13: return `${this.DiceService.roll(20)} lockpick(s)`;
                 case 14: return `A ${this.DiceService.roll(500)} ft long grappling hook`;
-                case 15: return ``;
-                case 16: return ``;
-                case 17: return ``;
-                case 18: return ``;
-                case 19: return ``;
-                case 20: return ``;
-                case 21: return ``;
-                case 22: return ``;
-                case 23: return ``;
-                case 24: return ``;
-                case 25: return ``;
-                case 26: return ``;
-                case 27: return ``;
-                case 28: return ``;
-                case 29: return ``;
-                case 30: return ``;
-                case 31: return ``;
+                case 15: return `A pen with ${roll(3) +1} wells of ink`;
+                case 16: return `A mortar and pestle`;
+                case 17: return `A lantern`;
+                case 18: return `${roll(50)} oz of lantern oil`;
+                case 19: return `A ${color()} backpack`;
+                case 20: return `A ${color()} satchel`;
+                case 21: return `A spyglass`;
+                case 22: return `${roll(5)} pair(s) of ${color()} trousers`;
+                case 23: return `A ${color()} hat`;
+                case 24: return `A ${material()} harp`;
+                case 25: return `A ${material()} lyre`;
+                case 26: return `A jar of ${color()} dye`;
+                case 27: return `A bucket of ${color()} paint`;
+                case 28: return `A blacksmith's hammer`;
+                case 29: return `${roll(1000)} peices of gold`;
+                case 30: return `A ${color()} dress`;
+                case 31: return `A ${color()} tunic`;
+                case 32: return `A horn flask`;
+                case 33: return `A ${material()} flute`;
+                case 34: return `A ${color()} eyepatch`;
+                case 35: return `A fiddle`;
+                case 36: return `A walking stick`;
+                case 37: return `${roll(4)} flasks of acid`;
+                case 38: return `A ${color()} poncho`;
+                case 39: return `A ${roll(30) + 10} ft long wooden ladder`;
+                case 40: return `A small pot`;
+                case 41: return `A vial of spider venom`;
+                case 42: return `A ${race()} made fishing pole`;
+                case 43: return `A large roll of hide`;
+                case 44: return `A metal box full of kindling`;
+                case 45: return `A small pouch of ${roll(20)} nails`;
+                case 46: return `A flask of perfume`;
+                case 47: return `A small case of makeup`;
+                case 48: return `${roll(10) + 1} bottles of fresh water`;
+                case 49: return ``;
+                case 50: return ``;
+                case 51: return ``;
+                case 52: return ``;
+                case 53: return ``;
+                case 54: return ``;
+                case 55: return ``;
+                case 56: return ``;
+                case 57: return ``;
+                case 58: return ``;
+                case 59: return ``;
+                case 60: return ``;
+                case 61: return ``;
+                case 62: return ``;
+                case 63: return ``;
+                case 64: return ``;
+                case 65: return ``;
+                case 66: return ``;
+                case 67: return ``;
+                case 68: return ``;
+                case 69: return ``;
+                case 70: return ``;
+                case 71: return ``;
+                case 72: return ``;
+                case 73: return ``;
+                case 74: return ``;
+                case 75: return ``;
+                case 76: return ``;
+                case 77: return ``;
+                case 78: return ``;
+                case 79: return ``;
+                case 80: return ``;
+                case 81: return ``;
+                case 82: return ``;
+                case 83: return ``;
+                case 84: return ``;
+                case 85: return ``;
+                case 86: return ``;
+                case 87: return ``;
+                case 88: return ``;
+                case 89: return ``;
+                case 90: return ``;
+                case 91: return ``;
+                case 92: return ``;
+                case 93: return ``;
+                case 94: return ``;
+                case 95: return ``;
+                case 96: return ``;
+                case 97: return ``;
+                case 98: return ``;
+                case 99: return ``;
+                case 100: return ``;
+            }
+        }
+
+        public mysteriousTrinkets() {
+            var roll = this.DiceService.roll;
+            var material = this.WordService.randomMaterial;
+            var color = this.WordService.randomColor;
+            var mod = this.WordService.randomWeaponModifiers;
+            var lang = this.WordService.randomLanguage;
+            var race = this.WordService.randomRace;
+            switch (this.DiceService.roll(100)) {
+                case 1: return `${roll(5) + 1} pages from an old diary`;
+                case 2: return `A ${color()} scroll detailing an ancient magic of some sort`;
+                case 3: return `A musty ${color()} potion in a ${material()} bottle`;
+                case 4: return `An old ${material()} bottle`;
+                case 5: return `A glass eyeball`;
+                case 6: return `The claw of a small animal`;
+                case 7: return `A(n) ${mod()} ${material()} greatsword that was brought to you by a dying courier`;
+                case 8: return `A book detailing the various trees of the world with many notes scribbled in the margins`;
+                case 9: return `${roll(10)} ${material()} sphere(s) in a ${mod()} ${material()} box`;
+                case 10: return `${roll(20) + 1} ${color()} eggs`;
+                case 11: return `A plush doll of an unknown diety`;
+                case 12: return `A working VooDoo doll (just add hair & blood!)`;
+                case 13: return `A ${material()} mask that is always wet`;
+                case 14: return `${roll(100)} sheets of blank paper`;
+                case 15: return `A ${mod()} puppet`;
+                case 16: return `A cookbook written in ${lang()}`;
+                case 17: return `A ${lang()} to ${lang()} Dictionary`;
+                case 18: return `A pouch of ${race()} hair`;
+                case 19: return `A pouch of dried fruit`;
+                case 20: return `The skull of a ${race()}`;
+                case 21: return `A locked Adamantine case that you found buried under a tree in the forest`;
+                case 22: return `A painting of a ${race()} with an inscription written in ${lang()}`;
+                case 23: return `A portable ${material()} chess set`;
+                case 24: return `${roll(40)} ${mod()} stamps with a picture of a ${race()} on them`;
+                case 25: return `A spool of ${color()} thread`;
+                case 26: return `A pouch of sharpened ${race()} teeth`;
+                case 27: return `Old love letters written in ${lang()}`;
+                case 28: return `A pair of ${color()} underwear`;
+                case 29: return `A plush doll of a ${race()}`;
+                case 30: return `A ${mod()} ${material()} statue of a ${race()}`;
+                case 31: return `A map of an unknown area`;
                 case 32: return ``;
                 case 33: return ``;
                 case 34: return ``;
@@ -109,5 +227,5 @@
                 case 100: return ``;
             }
         }
+        }
     }
-}
