@@ -10,18 +10,32 @@
         public hp;
         public items = [];
         public talents = [];
-        public spells = [];
         public weapons = [];
 
-        static $inject = ['$http', 'DiceService'];
+        static $inject = ['$http', 'DiceService', 'ItemService'];
 
-        constructor(private $http: ng.IHttpService, private DiceService: ZeroBitGaming.Services.DiceService) {
-            
+        constructor(private $http: ng.IHttpService, private DiceService: ZeroBitGaming.Services.DiceService, private ItemService: ZeroBitGaming.Services.ItemService) {
+            var gen = DiceService.generateStat;
+            var roll = DiceService.roll;
+            this.strength = gen();
+            this.constitution = gen();
+            this.dexterity = gen();
+            this.agility = gen();
+            this.insight = gen();
+            this.willpower = gen();
+            this.perception = gen();
+            this.hp = roll(10) + 5;
         }
        
+        public questionOne(answer) {
+            switch (answer) {
+                
+            }
+        }
+
          // Creates a character from all of the saved stats 
         public createCharacter() {
-            var player = this.newCharacter(this.strength, this.constitution, this.dexterity, this.agility, this.insight, this.willpower, this.perception, this.hp, this.items, this.talents, this.spells, this.weapons);
+            var player = this.newCharacter(this.strength, this.constitution, this.dexterity, this.agility, this.insight, this.willpower, this.perception, this.hp, this.items, this.talents, this.weapons);
             
             return player;
 
@@ -33,18 +47,10 @@
                    
                 });
             }
-        
-       
-
-        public questionOne(answer) {
-            switch (answer) {
-                
-            }
-        }
 
 
-        public newCharacter(strength, constitution, dexterity, agility, insight, willpower, perception, hP, items, talents, spells, weapons) {
-            this.strength = strength,
+        public newCharacter(strength, constitution, dexterity, agility, insight, willpower, perception, hP, items, talents,  weapons) {
+                this.strength = strength,
                 this.constitution = constitution,
                 this.dexterity = dexterity,
                 this.agility = agility,
@@ -54,7 +60,6 @@
                 this.hp = hP,
                 this.items = items,
                 this.talents = talents,
-                this.spells = spells,
                 this.weapons = weapons
         }
 

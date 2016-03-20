@@ -58,5 +58,27 @@
                 return this.generateAverage();
             }
         }
+
+        public generateStat() {
+            var weak = this.generateWeak;
+            var avg = this.generateAverage;
+            var strong = this.generateStrong;
+            var epic = this.generateEpic;
+            var spec = this.generateSpecial;
+            var rec = this.recursiveRoll;
+
+            var make = this.roll(100)
+            if (make == 1) {
+                return epic();
+            } else if (make <= 20) {
+                return strong();
+            } else if (make >= 21 && make <= 80) {
+                return avg();
+            } else if (make >= 81 && make <= 99) {
+                return spec();
+            } else {
+                return rec();
+            }
+        }
     }
 }
