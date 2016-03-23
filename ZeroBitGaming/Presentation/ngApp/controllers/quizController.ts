@@ -15,9 +15,9 @@
         public weapon1;
         public weapon2;
 
-        static $inject = ['$http', 'DiceService', 'ItemService', 'TalentService'];
+        static $inject = ['$http', 'DiceService', 'ItemService', 'TalentService', 'WeaponService'];
 
-        constructor(private $http: ng.IHttpService, private DiceService: ZeroBitGaming.Services.DiceService, private ItemService: ZeroBitGaming.Services.ItemService, private TalentService: ZeroBitGaming.Services.TalentService) {
+        constructor(private $http: ng.IHttpService, private DiceService: ZeroBitGaming.Services.DiceService, private ItemService: ZeroBitGaming.Services.ItemService, private TalentService: ZeroBitGaming.Services.TalentService, private WeaponService: ZeroBitGaming.Services.TalentService) {
             var gen = DiceService.generateStat;
             var roll = DiceService.roll;
             this.strength = gen();

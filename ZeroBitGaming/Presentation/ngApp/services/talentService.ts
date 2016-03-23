@@ -44,7 +44,7 @@
                 case 2: return `Control Weather: You can change the weather in one area upto 20 miles by concentrating for 15 minutes`;
                 case 3: return `Shapeshift: you may take the form of any non-magical beast that you have seen`;
                 case 4: return `One with the Sun: You heal +5 points of damage for every hour in direct sunlight; even regrowing lost limbs; this power does not work if you are dead.`;
-                case 5: return `Poison or Purify: You can poison or purify up to a gallon of water a day.`;
+                case 5: return `Poison or Purify: You can poison or purify up to a gallon of liquid a day.`;
             }
         }
 
@@ -70,23 +70,19 @@
             }
         }
 
-        public elementalTalents() {
+        public evokerTalents() {
             var roll = this.DiceService.roll;
             var ele = this.WordService.elemtalTypes;
             switch (roll(5)) {
-                case 1: var ment = ele();
-                    return `Ball of ${ment}: Creates a ball of 1d10 ${ment} damage that can be thrown at targets`;
-                case 2: return `Elemental Immunity: Immune to the effects of ${ele()} damage`;
-                case 3: var ment = ele();
-                    return `Wall of ${ment}: Creates a wall made of ${ment} that can be in a straight line of 50ft or in a circle ${roll(5)} times per day`;
-                case 4: var ment = ele();
-                    return `Sheath of ${ment}: Surrounds your person in ${ment}; you deal 1d6 damage of this elements type`;
-                case 5: var ment = ele();
-                    return `Absorb ${ment}: If you are hit with an attack made of this element you have a chance of healing 1d6 damage`;
+                case 1: return `Fireball: for a ball of fire in your hands and shoot it at an enemy for 1d10 damage`;
+                case 2: return `Control Water: You can control up to 5 gallons of water at a time; shaping it and freezing it`;
+                case 3: return `Thunder Wave: you can clap your hands together and create a wave of sonic energy that deals 1d10 damage to everyone who can hear within 30ft of you`;
+                case 4: return `Chain Lightning: you can fire a bolt of lightning that has a 10% chance of bouncing to another target`;
+                case 5: return `Flight: you can fly`;
             }
         }
 
-        public divineTalents() {
+        public paladinTalents() {
             var roll = this.DiceService.roll;
             switch (roll(5)) {
                 case 1: return `Smite: You deal 1d20 damage on a melee or ranged attack ${roll(5)} times per day`;
@@ -97,7 +93,7 @@
             }
         }
 
-        public conjurationTalents() {
+        public nomadTalents() {
             var roll = this.DiceService.roll;
             var race = this.WordService.randomRace;
             switch (roll(5)) {
@@ -109,45 +105,35 @@
             }
         }
 
-        public transmutationTalents() {
+        public enchanterTalents() {
             var roll = this.DiceService.roll;
+            var mat = this.WordService.randomMaterial;
             switch (roll(5)) {
-                case 1: return `Polymorph: you can transform into any object or creature that you've seen.`;
-                case 2: return ``;
-                case 3: return ``;
-                case 4: return ``;
-                case 5: return ``;
-            }
-        }
-
-        public enchantmentTalents() {
-            var roll = this.DiceService.roll;
-            switch (roll(5)) {
-                case 1: return ``;
-                case 2: return ``;
-                case 3: return ``;
-                case 4: return ``;
-                case 5: return ``;
+                case 1: return `Animate: you can give life to small inanimate objects who will do their best to carry out your bidding`;
+                case 2: return `Telepathy: you can read the minds of intelligent beings around you and you can send thoughts to them`;
+                case 3: return `You can transmute ${mat()} objects into ${mat()} objects`;
+                case 4: return `Glitter Dust: you can fire a wave of sparkling dust that blinds enemies and reveals invisible things ${roll(10)} times per day`;
+                case 5: return `Blur: you leave a trail of illusions behind you making it hard to hit you. Enemies have a -8 to hit you when this is active`;
             }
         }
 
         public rogueTalents() {
             var roll = this.DiceService.roll;
             switch (roll(5)) {
-                case 1: return ``;
-                case 2: return ``;
-                case 3: return ``;
-                case 4: return ``;
-                case 5: return ``;
+                case 1: return `Stalker: you gain a +5 to agility checks to sneak up on someone`;
+                case 2: return `Sleight of Hand: You gain a +5 to dexterity checks when trying steal something`;
+                case 3: return `Sneak Attack: you gain a +1d10 damage to attacks if an enemy is not aware of your presence`;
+                case 4: return `Hide in Plain Sight: ${roll(5)} times per day you may hide in plain sight of someone even if they have already noticed you`;
+                case 5: return `Double Attack of Opportunity: Any time you would receive an attack of oportunity you may make 2 attacks instead of one`;
             }
         }
 
-        public bardicTalents() {
+        public bardTalents() {
             var roll = this.DiceService.roll;
             switch (roll(5)) {
-                case 1: return ``;
-                case 2: return ``;
-                case 3: return ``;
+                case 1: return `Inspiring Song: you may play a song on an instrument or sing and anyone who can hear you that you choose gains a bonus to all actions equal to your Insight`;
+                case 2: return `Bardic Knowledge: +5 to attempts to remember things even if you've never heard of it`;
+                case 3: return `Earthshattering Music: with an instrument you may play a song that causes everyone whom you choose to fall prone within 30ft of you ${roll(6)} times per day`;
                 case 4: return ``;
                 case 5: return ``;
             }
