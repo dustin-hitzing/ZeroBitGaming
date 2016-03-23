@@ -127,7 +127,7 @@
         public randomRace() {
             var roll = this.DiceService.roll;
             var color = this.randomColor;
-            switch (roll(26)) {
+            switch (roll(27)) {
                 case 1: return 'goblin';
                 case 2: return 'human';
                 case 3: return 'hobgoblin';
@@ -154,8 +154,7 @@
                 case 24: return 'T-rex';
                 case 25: return 'triceratops';
                 case 26: return 'liopleurodon';
-
-
+                case 27: return `giant frog`;
             }
         }
     }

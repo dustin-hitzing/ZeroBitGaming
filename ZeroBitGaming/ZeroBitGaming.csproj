@@ -300,6 +300,7 @@
     <TypeScriptCompile Include="Presentation\ngApp\services\diceService.ts" />
     <TypeScriptCompile Include="Presentation\ngApp\services\itemService.ts" />
     <TypeScriptCompile Include="Presentation\ngApp\services\talentService.ts" />
+    <TypeScriptCompile Include="Presentation\ngApp\services\weaponService.ts" />
     <TypeScriptCompile Include="Presentation\ngApp\services\WordService.ts" />
     <TypeScriptCompile Include="Scripts\typings\angularjs\angular-animate.d.ts" />
     <TypeScriptCompile Include="Scripts\typings\angularjs\angular-component-router.d.ts" />
