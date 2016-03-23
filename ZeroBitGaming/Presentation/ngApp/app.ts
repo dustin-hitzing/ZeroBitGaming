@@ -1,6 +1,9 @@
 ﻿namespace ZeroBitGaming {
-    
+
     angular.module('ZeroBitGaming', ['ngRoute']);
+
+    
+    
 
     angular.module('ZeroBitGaming').factory('authInterceptor',
         ($q: ng.IQService, $window: ng.IWindowService, $location: ng.ILocationService) => {

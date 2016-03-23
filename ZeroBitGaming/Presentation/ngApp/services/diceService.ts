@@ -1,6 +1,8 @@
 ﻿namespace ZeroBitGaming.Services {
     export class DiceService {
         // Rolls a die with the number of sides equal to the arguement passed in
+        angular.module('ZeroBitGaming').service('DiceService', DiceService);
+
         public roll(num) {
             return Math.floor((Math.random() * num) + 1);
         }
