@@ -93,6 +93,37 @@
                 case 10: return 'abyssil';
             }
         }
+
+        public favoredEnemy() {
+            var roll = this.DiceService.roll;
+            switch (roll(13)) {
+                case 1: return `Constructs`;
+                case 2: return `Dragons`;
+                case 3: return `Plants`;
+                case 4: return `Undead`;
+                case 5: return `Goblinoids`;
+                case 6: return `Humanoids`;
+                case 7: return `Beasts`;
+                case 8: return `Insectoids`;
+                case 9: return `Outsiders`;
+                case 10: return `Abberations`;
+                case 11: return `Fey`;
+                case 12: return `Elementals`;
+                case 13: return `Giants`;
+            }
+        }
+
+        public elemtalTypes() {
+            var roll = this.DiceService.roll;
+            switch (roll(5)) {
+                case 1: return "fire";
+                case 2: return "water";
+                case 3: return "thunder";
+                case 4: return "wind";
+                case 5: return "lightning";
+            }
+        }
+
         public randomRace() {
             var roll = this.DiceService.roll;
             var color = this.randomColor;
