@@ -134,8 +134,8 @@
                 case 1: return `Inspiring Song: you may play a song on an instrument or sing and anyone who can hear you that you choose gains a bonus to all actions equal to your Insight`;
                 case 2: return `Bardic Knowledge: +5 to attempts to remember things even if you've never heard of it`;
                 case 3: return `Earthshattering Music: with an instrument you may play a song that causes everyone whom you choose to fall prone within 30ft of you ${roll(6)} times per day`;
-                case 4: return ``;
-                case 5: return ``;
+                case 4: return `Suggestion: you may suggest an action for someone ${roll(5)} times per day and as long as it does not endanger them then they must perform it`;
+                case 5: return `Mend Items: you may repair any item to new ${roll(5)} times per day`;
             }
         }
     }

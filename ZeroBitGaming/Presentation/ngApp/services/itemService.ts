@@ -5,6 +5,8 @@
 
         constructor(private DiceService: ZeroBitGaming.Services.DiceService, private WordService: ZeroBitGaming.Services.WordService) { }
 
+      
+
 
         public regularItems() {
             var roll = this.DiceService.roll;

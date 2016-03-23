@@ -1,6 +1,83 @@
-﻿<div class="row">
+﻿<!--First Question-->
+<div class="row" ng-show="q1">
 <div class="col-md-offset-4 col-md-4">
-    <p>Now tell me are you a boy or are you a girl?</p>
-    <input value="q1" ng-model="{{}}" />
+    <form ng-submit="controller.questionOne(controller.val)" >
+        <p>Where were you born?</p>
+        <input type="button" value="On a Mountain" ng-model="{{controller.val = 1}}" ng-click="q1 = false" />
+        <input type="button"value="In a Cave" ng-model="{{controller.val = 2}}" ng-click="q1 = false" />
+        <input type="button" value="On a tundra" ng-model="{{controller.val = 3}}" ng-click="q1 = false" />
+        <input type="button" value="In a City" ng-model="{{controller.val = 4}}" ng-click="q1 = false" />
+        <input type="button" value="In a Village" ng-model="{{controller.val = 5}}" ng-click="q1 = false" />
+        <input type="button" value="In the desert" ng-model="{{controller.val = 6}}" ng-click="q1 = false" />
+        <input type="button" value="In a dungeon" ng-model="{{controller.val = 7}}" ng-click="q1 = false" />
+    </form>
 </div>
 </div>
+
+<!--Second Question-->
+<div class="row" ng-show="q2 = false">
+    <div class="col-md-offset-4 col-md-4">
+        <form ng-submit="controller.questionTwo(controller.val)">
+            <p>Pick an animal.</p>
+            <input type="button" value="Owl" ng-model="{{controller.val = 1}}" ng-click="q2 = true" />
+            <input type="button" value="Fox" ng-model="{{controller.val = 2}}" ng-click="q2 = true" />
+            <input type="button" value="Goose" ng-model="{{controller.val = 3}}" ng-click="q2 = true" />
+            <input type="button" value="Rooster" ng-model="{{controller.val = 4}}" ng-click="q2 = true" />
+            <input type="button" value="Moose" ng-model="{{controller.val = 5}}" ng-click="q2 = true" />
+            <input type="button" value="Deer" ng-model="{{controller.val = 6}}" ng-click="q2 = true" />
+            <input type="button" value="Rat" ng-model="{{controller.val = 7}}" ng-click="q2 = true" />
+        </form>
+    </div>
+</div>
+
+<!--Third Question-->
+
+<div class="row" ng-show="q3 = false">
+    <div class="col-md-offset-4 col-md-4">
+        <form ng-submit="controller.questionThree(controller.val)">
+            <p>Pick an Item.</p>
+            <input type="button" value="A Fork" ng-model="{{controller.val = 1}}" ng-click="q3 = true" />
+            <input type="button" value="A Deck of Playing Cards" ng-model="{{controller.val = 2}}" ng-click="q3 = true" />
+            <input type="button" value="A Crown" ng-model="{{controller.val = 3}}" ng-click="q3 = true" />
+            <input type="button" value="A Torch" ng-model="{{controller.val = 4}}" ng-click="q3 = true" />
+        </form>
+    </div>
+</div>
+<!--Question Four-->
+<div class="row" ng-show="q4 = false">
+    <div class="col-md-offset-4 col-md-4">
+        <form ng-submit="controller.questionFour(controller.val)">
+            <p>Pick a food.</p>
+            <input type="button" value="Broccoli" ng-model="{{controller.val = 1}}" ng-click="q4 = true" />
+            <input type="button" value="Bread" ng-model="{{controller.val = 2}}" ng-click="q4 = true" />
+            <input type="button" value="Cactus" ng-model="{{controller.val = 3}}" ng-click="q4 = true" />
+            <input type="button" value="Jello" ng-model="{{controller.val = 4}}" ng-click="q4 = true" />
+        </form>
+    </div>
+</div>
+
+<div class="row" ng-show="q5 = false">
+    <div class="col-md-offset-4 col-md-4">
+        <form ng-submit="controller.questionFive(controller.val)">
+            <p>Pick a job.</p>
+            <input type="button" value="Caretaker" ng-model="{{controller.val = 1}}" ng-click="q5 = true" />
+            <input type="button" value="Athlete" ng-model="{{controller.val = 2}}" ng-click="q5 = true" />
+            <input type="button" value="Carpenter" ng-model="{{controller.val = 3}}" ng-click="q5 = true" />
+            <input type="button" value="Teacher" ng-model="{{controller.val = 4}}" ng-click="q5 = true" />
+        </form>
+    </div>
+</div>
+
+<div class="row" ng-show="q6 = false">
+    <div class="col-md-offset-4 col-md-4">
+        <form ng-submit="controller.questionSix(controller.val)">
+            <p>How do you eat your food</p>
+            <input type="button" value="With Just a Fork" ng-model="{{controller.val = 1}}" ng-click="q6 = true" />
+            <input type="button" value="With a Fork and a Knife" ng-model="{{controller.val = 2}}" ng-click="q6 = true" />
+            <input type="button" value="With a Spork" ng-model="{{controller.val = 3}}" ng-click="q6 = true" />
+            <input type="button" value="With both of your hands" ng-model="{{controller.val = 4}}" ng-click="q6 = true" />
+            <input type="button" value="With just one hand" ng-model="{{controller.val = 5}}" ng-click="q6 = true" />
+        </form>
+    </div>
+</div>
+

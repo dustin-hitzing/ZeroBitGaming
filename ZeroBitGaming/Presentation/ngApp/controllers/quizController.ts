@@ -1,5 +1,6 @@
 ﻿namespace ZeroBitGaming.Controllers {
     export class QuizController {
+        public val;
         public strength;
         public constitution;
         public dexterity;
@@ -15,7 +16,7 @@
         public weapon1;
         public weapon2;
 
-        static $inject = ['$http', 'DiceService', 'ItemService', 'TalentService', 'WeaponService'];
+        //static $inject = ['$http', 'DiceService', 'ItemService', 'TalentService', 'WeaponService'];
 
         constructor(private $http: ng.IHttpService, private DiceService: ZeroBitGaming.Services.DiceService, private ItemService: ZeroBitGaming.Services.ItemService, private TalentService: ZeroBitGaming.Services.TalentService, private WeaponService: ZeroBitGaming.Services.TalentService) {
             var gen = DiceService.generateStat;
@@ -30,6 +31,13 @@
             this.hp = roll(10) + 5;
         }
        
+        public superLog() {
+            console.log(`Strength = ${this.strength}`, `Dexterity = ${this.dexterity}`, `Agility = ${this.agility}`, `Constitution = ${this.constitution}`, `Insight = ${this.insight}`, `Willpower = ${this.willpower}`, `Perception = ${this.perception}`, `hp = ${this.hp}`);
+            console.log(this.items);
+            console.log(this.weapon1, this.weapon2);
+            console.log(this.talent1,this.talent2, this.talent3);
+        }
+
         public questionOne(answer) {
             var roll = this.DiceService.roll;
             switch (answer) {
@@ -41,6 +49,7 @@
                 case 6: return this.willpower += roll(4);
                 case 7: return this.perception += roll(4);
             }
+            this.superLog();
         }
 
         public questionTwo(answer) {
@@ -54,6 +63,7 @@
                 case 6: return this.perception += roll(4);
                 case 7: return this.dexterity += roll(4);
             }
+            this.superLog();
         }
 
         public questionThree(answer) {
@@ -63,21 +73,23 @@
                 case 1: this.talent1 = tal.fighterTalents(); break;
                 case 2: this.talent1 = tal.rogueTalents(); break;
                 case 3: this.talent1 = tal.rangerTalents(); break;
-                case 4: this.talent1 = tal.elementalTalents(); break;
-                case 5: this.talent1 = tal.divineTalents(); break;
+                case 4: this.talent1 = tal.evokerTalents(); break;
+                
             }
+            this.superLog();
         }
 
         public questionFour(answer) {
             var roll = this.DiceService.roll;
             var tal = this.TalentService;
             switch (answer) {
-                case 1: this.talent2 = tal.barbarianTalents(); break;
-                case 2: this.talent2 = tal.druidTalents(); break;
-                case 3: this.talent2 = tal.enchantmentTalents(); break;
-                case 4: this.talent2 = tal.bardicTalents(); break;
+                case 1: this.talent2 = tal.druidTalents(); break;
+                case 2: this.talent2 = tal.paladinTalents(); break;
+                case 3: this.talent2 = tal.nomadTalents(); break;
+                case 4: this.talent2 = tal.bardTalents(); break;
                 
             }
+            this.superLog();
         }
 
         public questionFive(answer) {
@@ -85,13 +97,38 @@
             var tal = this.TalentService;
             switch (answer) {
                 case 1: this.talent3 = tal.necromancyTalents(); break;
-                case 2: this.talent3 = tal.conjurationTalents(); break;
-                case 3: this.talent3 = tal.transmutationTalents(); break;
+                case 2: this.talent3 = tal.barbarianTalents(); break;
+                case 3: this.talent3 = tal.enchanterTalents(); break;
                 case 4: this.talent3 = tal.monkTalents(); break;
 
             }
+            this.superLog();
         }
 
+        public questionSix(answer) {
+            var roll = this.DiceService.roll;
+            switch (answer) {
+                case 1: this.rollReg(roll(2)); break;
+                case 2: this.rollReg(roll(5)); break;
+                case 3: this.rollReg(roll(3)); this.rollWeird(roll(3)); break;
+                case 4: this.rollWeird(roll(5)); break;
+                case 5: this.rollWeird(roll(2)); break;
+            }
+            this.superLog();
+        }
+
+        public rollReg(val) {
+            for (var i = 0; i <= val; i++) {
+                this.items.push(this.ItemService.regularItems());
+            }
+            
+        }
+
+        public rollWeird(val) {
+            for (var i = 0; i <= val; i++) {
+                this.items.push(this.ItemService.mysteriousTrinkets());
+            }
+        }
 
          // Creates a character from all of the saved stats 
         public createCharacter() {
